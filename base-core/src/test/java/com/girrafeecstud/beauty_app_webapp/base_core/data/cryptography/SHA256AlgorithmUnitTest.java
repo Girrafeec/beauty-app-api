@@ -1,4 +1,4 @@
-package com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.cryptography;
+package com.girrafeecstud.beauty_app_webapp.base_core.data.cryptography;
 
 import com.girrafeecstud.beauty_app_webapp.base_core.data.base.cryptography.SHA256Hash;
 import org.junit.Assert;

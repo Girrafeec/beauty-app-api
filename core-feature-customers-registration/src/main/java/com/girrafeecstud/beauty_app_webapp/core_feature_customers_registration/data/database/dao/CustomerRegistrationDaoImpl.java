@@ -13,4 +13,7 @@ public class CustomerRegistrationDaoImpl extends DatabaseConnection implements U
     public void registration(UserDatabaseModel user) {
 
     }
+
+    // Add connection closing with @PreDestroy annotation
+
 }
