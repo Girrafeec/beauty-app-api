@@ -6,7 +6,4 @@ public interface EntityMapper<E,D> {
 
     public E mapToEntity(D type);
 
-    UserDatabaseModel mapFromEntity(User user);
-
-    User mapToEntity(UserDatabaseModel user);
 }

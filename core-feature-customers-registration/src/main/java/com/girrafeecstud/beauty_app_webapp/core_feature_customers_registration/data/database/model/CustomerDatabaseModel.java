@@ -1,41 +1,43 @@
-package com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.domain.entity;
+package com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.database.model;
 
-import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.domain.entity.User;
+import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.data.database.model.UserDatabaseModel;
 
 import java.util.UUID;
 
-public class Customer implements User {
+public class CustomerDatabaseModel implements UserDatabaseModel {
 
     private UUID customerId;
 
     private String customerPhoneNumber;
 
-    private String customerPassword;
+    private String customerHashedPassword;
 
     private String customerFirstName;
 
     private String customerLastName;
 
-    public Customer(
+    public CustomerDatabaseModel(
             String customerPhoneNumber,
-            String customerPassword,
+            String customerHashedPassword,
             String customerFirstName,
             String customerLastName
     ) {
         this.customerPhoneNumber = customerPhoneNumber;
-        this.customerPassword = customerPassword;
+        this.customerHashedPassword = customerHashedPassword;
         this.customerFirstName = customerFirstName;
         this.customerLastName = customerLastName;
     }
 
-    public Customer(
+    public CustomerDatabaseModel(
             UUID customerId,
             String customerPhoneNumber,
+            String customerHashedPassword,
             String customerFirstName,
             String customerLastName
     ) {
         this.customerId = customerId;
         this.customerPhoneNumber = customerPhoneNumber;
+        this.customerHashedPassword = customerHashedPassword;
         this.customerFirstName = customerFirstName;
         this.customerLastName = customerLastName;
     }
@@ -48,8 +50,8 @@ public class Customer implements User {
         return customerPhoneNumber;
     }
 
-    public String getCustomerPassword() {
-        return customerPassword;
+    public String getCustomerHashedPassword() {
+        return customerHashedPassword;
     }
 
     public String getCustomerFirstName() {
@@ -60,7 +62,4 @@ public class Customer implements User {
         return customerLastName;
     }
 
-    public void setCustomerPassword(String customerPassword) {
-        this.customerPassword = customerPassword;
-    }
 }
