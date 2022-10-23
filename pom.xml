@@ -16,6 +16,8 @@
   <modules>
     <module>base-core</module>
     <module>base-core-user-registration</module>
+    <module>core-database</module>
+    <module>core-feature-customers-registration</module>
   </modules>
 
   <dependencies>
@@ -71,13 +73,12 @@
       <scope>provided</scope>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>8.0.11</version>
-    </dependency>
-
+<!--    &lt;!&ndash; https://mvnrepository.com/artifact/mysql/mysql-connector-java &ndash;&gt;-->
+<!--    <dependency>-->
+<!--      <groupId>mysql</groupId>-->
+<!--      <artifactId>mysql-connector-java</artifactId>-->
+<!--      <version>8.0.11</version>-->
+<!--    </dependency>-->
 
   </dependencies>
 
