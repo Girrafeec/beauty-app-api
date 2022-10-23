@@ -77,7 +77,7 @@
       <scope>provided</scope>
     </dependency>
 
-<!--    &lt;!&ndash; https://mvnrepository.com/artifact/mysql/mysql-connector-java &ndash;&gt;-->
+    <!--    &lt;!&ndash; https://mvnrepository.com/artifact/mysql/mysql-connector-java &ndash;&gt;-->
 <!--    <dependency>-->
 <!--      <groupId>mysql</groupId>-->
 <!--      <artifactId>mysql-connector-java</artifactId>-->
