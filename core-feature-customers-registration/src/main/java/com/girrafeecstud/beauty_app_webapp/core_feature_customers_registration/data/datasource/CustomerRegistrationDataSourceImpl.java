@@ -27,4 +27,10 @@ public class CustomerRegistrationDataSourceImpl implements UserRegistrationDataS
         );
     }
 
+    @Override
+    public boolean userExists(User user) {
+        return dao.userExists(
+                mapper.mapFromEntity((Customer) user)
+        );
+    }
 }

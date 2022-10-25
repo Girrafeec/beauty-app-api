@@ -265,3 +265,9 @@ input[type="button"] {
 .para-2 a {
   color: #ffd541;
 }
+
+.error-text-field {
+  font-size: 18px;
+  color: #de2114;
+  font-style: bold;
+}

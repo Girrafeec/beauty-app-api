@@ -16,6 +16,10 @@ public class Customer implements User {
 
     private String customerLastName;
 
+    public Customer() {
+
+    }
+
     public Customer(
             String customerPhoneNumber,
             String customerPassword,

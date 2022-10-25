@@ -4,4 +4,6 @@ import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.domain.en
 
 public interface UserRegistrationDataSource {
     void registration(User user);
+
+    boolean userExists(User user);
 }

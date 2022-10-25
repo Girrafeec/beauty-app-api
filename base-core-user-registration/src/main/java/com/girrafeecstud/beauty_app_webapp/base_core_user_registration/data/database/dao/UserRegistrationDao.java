@@ -4,4 +4,6 @@ import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.data.data
 
 public interface UserRegistrationDao {
     void registration(UserDatabaseModel user);
+
+    boolean userExists(UserDatabaseModel user);
 }

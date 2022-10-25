@@ -53,6 +53,13 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20160810</version>
+        </dependency>
+
         <dependency>
             <groupId>com.girrafeecstud.beauty_app_webapp.core-database</groupId>
             <artifactId>core-database</artifactId>

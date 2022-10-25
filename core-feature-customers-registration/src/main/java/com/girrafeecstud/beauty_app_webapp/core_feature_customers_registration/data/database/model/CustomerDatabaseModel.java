@@ -42,6 +42,18 @@ public class CustomerDatabaseModel implements UserDatabaseModel {
         this.customerLastName = customerLastName;
     }
 
+    public CustomerDatabaseModel(
+            UUID customerId,
+            String customerPhoneNumber,
+            String customerFirstName,
+            String customerLastName
+    ) {
+        this.customerId = customerId;
+        this.customerPhoneNumber = customerPhoneNumber;
+        this.customerFirstName = customerFirstName;
+        this.customerLastName = customerLastName;
+    }
+
     public UUID getCustomerId() {
         return customerId;
     }
