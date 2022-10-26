@@ -1,6 +1,7 @@
 package com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.database.dao;
 
-import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.database.model.CustomerDatabaseModelRegistration;
+import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.database.dao.CustomerRegistrationDaoImpl;
+import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.database.model.CustomerDatabaseModelRegistration;
 import org.junit.Assert;
 import org.junit.Test;
 

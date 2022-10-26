@@ -67,8 +67,8 @@
         </dependency>
 
         <dependency>
-            <groupId>com.girrafeecstud.beauty_app_webapp.base-core-registrationUserEntity-registration</groupId>
-            <artifactId>base-core-registrationUserEntity-registration</artifactId>
+            <groupId>com.girrafeecstud.beauty_app_webapp.base-core-user-registration</groupId>
+            <artifactId>base-core-user-registration</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

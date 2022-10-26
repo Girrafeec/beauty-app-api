@@ -1,6 +1,6 @@
-package data.database.dao;
+package com.girrafeecstud.beauty_app_webapp.base_core_user_registration.data.database.dao;
 
-import data.database.model.RegistrationUserDatabaseModel;
+import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.data.database.model.RegistrationUserDatabaseModel;
 
 import javax.annotation.PreDestroy;
 

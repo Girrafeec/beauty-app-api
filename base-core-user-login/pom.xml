@@ -10,8 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
     <version>1.0-SNAPSHOT</version>
 
-    <groupId>com.girrafeecstud.beauty_app_webapp.base-core-user-registration</groupId>
-    <artifactId>base-core-user-registration</artifactId>
+    <groupId>com.girrafeecstud.beauty_app_webapp.base-core-user-login</groupId>
+    <artifactId>base-core-user-login</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -19,9 +19,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <packaging>jar</packaging>
-
     <dependencies>
+
         <dependency>
             <groupId>com.girrafeecstud.beauty_app_webapp.base_core</groupId>
             <artifactId>base-core</artifactId>
