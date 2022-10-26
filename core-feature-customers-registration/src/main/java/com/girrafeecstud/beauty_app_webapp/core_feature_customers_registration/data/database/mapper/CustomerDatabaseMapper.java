@@ -1,13 +1,13 @@
 package com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.database.mapper;
 
 import com.girrafeecstud.beauty_app_webapp.base_core.data.base.mapper.EntityMapper;
-import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.database.model.CustomerDatabaseModel;
-import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.domain.entity.Customer;
+import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.database.model.CustomerDatabaseModelRegistration;
+import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.domain.entity.RegistationCustomerEntity;
 
-public class CustomerDatabaseMapper implements EntityMapper<Customer, CustomerDatabaseModel> {
+public class CustomerDatabaseMapper implements EntityMapper<RegistationCustomerEntity, CustomerDatabaseModelRegistration> {
 
-    public CustomerDatabaseModel mapFromEntity(Customer type) {
-        return new CustomerDatabaseModel(
+    public CustomerDatabaseModelRegistration mapFromEntity(RegistationCustomerEntity type) {
+        return new CustomerDatabaseModelRegistration(
                 type.getCustomerId(),
                 type.getCustomerPhoneNumber(),
                 type.getCustomerPassword(),
@@ -16,8 +16,8 @@ public class CustomerDatabaseMapper implements EntityMapper<Customer, CustomerDa
         );
     }
 
-    public Customer mapToEntity(CustomerDatabaseModel type) {
-        return new Customer(
+    public RegistationCustomerEntity mapToEntity(CustomerDatabaseModelRegistration type) {
+        return new RegistationCustomerEntity(
                 type.getCustomerId(),
                 type.getCustomerPhoneNumber(),
                 type.getCustomerFirstName(),

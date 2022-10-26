@@ -2,7 +2,6 @@ package com.girrafeecstud.beauty_app_webapp.app.controller;
 
 import com.girrafeecstud.beauty_app_webapp.base_core.domain.base.BusinessResult;
 import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.controller.mapper.CustomerJsonEntityMapper;
-import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.domain.entity.Customer;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

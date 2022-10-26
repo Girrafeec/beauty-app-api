@@ -1,11 +1,11 @@
 package com.girrafeecstud.beauty_app_webapp.base_core_user_registration.domain.repository;
 
 import com.girrafeecstud.beauty_app_webapp.base_core.domain.base.BusinessResult;
-import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.domain.entity.User;
+import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.domain.entity.RegistrationUserEntity;
 
 public interface UserRegistrationRepository {
-    BusinessResult registration(User user);
+    BusinessResult registration(RegistrationUserEntity registrationUserEntity);
 
-    boolean userExists(User user);
+    boolean userExists(RegistrationUserEntity registrationUserEntity);
 
 }

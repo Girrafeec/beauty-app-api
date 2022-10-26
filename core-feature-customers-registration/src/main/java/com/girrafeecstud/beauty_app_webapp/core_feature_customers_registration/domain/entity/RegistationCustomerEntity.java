@@ -1,10 +1,10 @@
 package com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.domain.entity;
 
-import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.domain.entity.User;
+import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.domain.entity.RegistrationUserEntity;
 
 import java.util.UUID;
 
-public class Customer implements User {
+public class RegistationCustomerEntity implements RegistrationUserEntity {
 
     private UUID customerId;
 
@@ -16,11 +16,7 @@ public class Customer implements User {
 
     private String customerLastName;
 
-    public Customer() {
-
-    }
-
-    public Customer(
+    public RegistationCustomerEntity(
             String customerPhoneNumber,
             String customerPassword,
             String customerFirstName,
@@ -32,7 +28,7 @@ public class Customer implements User {
         this.customerLastName = customerLastName;
     }
 
-    public Customer(
+    public RegistationCustomerEntity(
             UUID customerId,
             String customerPhoneNumber,
             String customerFirstName,

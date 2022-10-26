@@ -1,33 +1,38 @@
 package com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.database.dao;
 
-import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.data.database.dao.UserRegistrationDao;
-import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.data.database.model.UserDatabaseModel;
+import data.database.dao.UserRegistrationDao;
+import data.database.model.RegistrationUserDatabaseModel;
 import com.girrafeecstud.beauty_app_webapp.core_database.data.database.config.DatabaseConnection;
-import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.database.model.CustomerDatabaseModel;
+import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.database.model.CustomerDatabaseModelRegistration;
 
+import javax.annotation.PreDestroy;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.UUID;
 
 public class CustomerRegistrationDaoImpl extends DatabaseConnection implements UserRegistrationDao {
 
-    //TODO move connection to dao methods?
-    Connection connection = getConnection();
+    Connection connection = null;
+
+    private void startConnection() {
+        connection = getConnection();
+    }
 
     @Override
-    public void registration(UserDatabaseModel user) {
+    public void registration(RegistrationUserDatabaseModel user) {
 
         PreparedStatement statement = null;
 
-        CustomerDatabaseModel customerDatabaseModel = (CustomerDatabaseModel) user;
+        CustomerDatabaseModelRegistration customerDatabaseModel = (CustomerDatabaseModelRegistration) user;
 
         String sqlQuery = "INSERT INTO customers " +
                 "(customer_id, customer_phone_number, customer_password, customer_first_name, customer_last_name) " +
                 "VALUES (uuid(), ?, ?, ?, ?);";
 
         try {
+            startConnection();
+
             statement = connection.prepareStatement(sqlQuery);
 
             statement.setString(1, customerDatabaseModel.getCustomerPhoneNumber());
@@ -58,15 +63,17 @@ public class CustomerRegistrationDaoImpl extends DatabaseConnection implements U
     }
 
     @Override
-    public boolean userExists(UserDatabaseModel user) {
+    public boolean userExists(RegistrationUserDatabaseModel user) {
 
         PreparedStatement statement = null;
 
-        CustomerDatabaseModel customerDatabaseModel = (CustomerDatabaseModel) user;
+        CustomerDatabaseModelRegistration customerDatabaseModel = (CustomerDatabaseModelRegistration) user;
 
         String checkIfUserExistsQuery = "select exists(select * from customers where customer_phone_number=?) as status;";
 
         try {
+            startConnection();
+
             statement = connection.prepareStatement(checkIfUserExistsQuery);
 
             statement.setString(1, customerDatabaseModel.getCustomerPhoneNumber());
@@ -96,20 +103,27 @@ public class CustomerRegistrationDaoImpl extends DatabaseConnection implements U
                     e.printStackTrace();
                 }
             }
-//            if (connection != null) {
-//                try {
-//                    connection.close();
-//                } catch (SQLException e) {
-//                    e.printStackTrace();
-//                }
-//            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         //TODO May cause error
         return false;
     }
 
-    //TODO Add connection closing with @PreDestroy annotation
-
-
+    @PreDestroy
+    @Override
+    public void onUserRegistrationDaoDestroy() {
+        System.out.println("destroy");
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

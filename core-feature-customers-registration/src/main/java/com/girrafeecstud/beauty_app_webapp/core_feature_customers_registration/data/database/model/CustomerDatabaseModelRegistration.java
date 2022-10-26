@@ -1,10 +1,10 @@
 package com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.database.model;
 
-import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.data.database.model.UserDatabaseModel;
+import data.database.model.RegistrationUserDatabaseModel;
 
 import java.util.UUID;
 
-public class CustomerDatabaseModel implements UserDatabaseModel {
+public class CustomerDatabaseModelRegistration implements RegistrationUserDatabaseModel {
 
     private UUID customerId;
 
@@ -16,7 +16,7 @@ public class CustomerDatabaseModel implements UserDatabaseModel {
 
     private String customerLastName;
 
-    public CustomerDatabaseModel(
+    public CustomerDatabaseModelRegistration(
             String customerPhoneNumber,
             String customerHashedPassword,
             String customerFirstName,
@@ -28,7 +28,7 @@ public class CustomerDatabaseModel implements UserDatabaseModel {
         this.customerLastName = customerLastName;
     }
 
-    public CustomerDatabaseModel(
+    public CustomerDatabaseModelRegistration(
             UUID customerId,
             String customerPhoneNumber,
             String customerHashedPassword,
@@ -42,7 +42,7 @@ public class CustomerDatabaseModel implements UserDatabaseModel {
         this.customerLastName = customerLastName;
     }
 
-    public CustomerDatabaseModel(
+    public CustomerDatabaseModelRegistration(
             UUID customerId,
             String customerPhoneNumber,
             String customerFirstName,

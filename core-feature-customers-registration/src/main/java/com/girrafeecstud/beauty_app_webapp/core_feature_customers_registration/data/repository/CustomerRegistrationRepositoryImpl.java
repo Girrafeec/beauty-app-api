@@ -3,12 +3,12 @@ package com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.
 import com.girrafeecstud.beauty_app_webapp.base_core.data.base.cryptography.SHA256Hash;
 import com.girrafeecstud.beauty_app_webapp.base_core.domain.base.BusinessResult;
 import com.girrafeecstud.beauty_app_webapp.base_core.domain.base.BusinessResultStatus;
-import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.data.datasource.UserRegistrationDataSource;
-import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.domain.entity.User;
-import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.domain.error.DomainErrors;
+import data.datasource.UserRegistrationDataSource;
+import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.domain.entity.RegistrationUserEntity;
+import com.girrafeecstud.beauty_app_webapp.base_core.domain.base.error.DomainErrors;
 import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.domain.repository.UserRegistrationRepository;
 import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.di.annotation.CustomerRegistrationDataSource;
-import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.domain.entity.Customer;
+import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.domain.entity.RegistationCustomerEntity;
 
 public class CustomerRegistrationRepositoryImpl implements UserRegistrationRepository {
 
@@ -24,8 +24,8 @@ public class CustomerRegistrationRepositoryImpl implements UserRegistrationRepos
         this.sha256Hash = sha256Hash;
     }
 
-    public BusinessResult registration(User user) {
-        if (userExists(user)) {
+    public BusinessResult registration(RegistrationUserEntity registrationUserEntity) {
+        if (userExists(registrationUserEntity)) {
             return new BusinessResult(
                     DomainErrors.USER_ALREADY_EXISTS_ERROR,
                     null,
@@ -33,7 +33,7 @@ public class CustomerRegistrationRepositoryImpl implements UserRegistrationRepos
             );
         }
         else {
-            Customer customer = (Customer) user;
+            RegistationCustomerEntity customer = (RegistationCustomerEntity) registrationUserEntity;
             customer.setCustomerPassword(sha256Hash.getSHA256Hash(customer.getCustomerPassword()));
             dataSource.registration(customer);
             return new BusinessResult(
@@ -45,8 +45,8 @@ public class CustomerRegistrationRepositoryImpl implements UserRegistrationRepos
     }
 
     @Override
-    public boolean userExists(User user) {
-        return dataSource.userExists(user);
+    public boolean userExists(RegistrationUserEntity registrationUserEntity) {
+        return dataSource.userExists(registrationUserEntity);
     }
 
 }

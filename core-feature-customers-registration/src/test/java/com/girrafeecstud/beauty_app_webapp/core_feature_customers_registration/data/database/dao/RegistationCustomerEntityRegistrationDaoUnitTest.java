@@ -1,11 +1,10 @@
 package com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.database.dao;
 
-import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.database.dao.CustomerRegistrationDaoImpl;
-import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.database.model.CustomerDatabaseModel;
+import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.database.model.CustomerDatabaseModelRegistration;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class CustomerRegistrationDaoUnitTest {
+public class RegistationCustomerEntityRegistrationDaoUnitTest {
 
     @Test
     public void testDataBaseConnection() {
@@ -18,7 +17,7 @@ public class CustomerRegistrationDaoUnitTest {
     public void testDataBaseUserExistsQuery() {
         CustomerRegistrationDaoImpl dao = new CustomerRegistrationDaoImpl();
 
-        CustomerDatabaseModel customer = new CustomerDatabaseModel(
+        CustomerDatabaseModelRegistration customer = new CustomerDatabaseModelRegistration(
                 "+79312315120",
                 "qwertyuiop",
                 "Ivan",

@@ -3,7 +3,7 @@ package com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.
 import com.girrafeecstud.beauty_app_webapp.base_core.domain.base.BusinessResult;
 import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.domain.repository.UserRegistrationRepository;
 import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.di.annotation.CustomerRegistrationRepository;
-import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.domain.entity.Customer;
+import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.domain.entity.RegistationCustomerEntity;
 
 public class CustomerRegistrationUseCase {
 
@@ -15,7 +15,7 @@ public class CustomerRegistrationUseCase {
         this.repository = repository;
     }
 
-    public BusinessResult registration(Customer customer) {
+    public BusinessResult registration(RegistationCustomerEntity customer) {
         return repository.registration(customer);
     }
 
