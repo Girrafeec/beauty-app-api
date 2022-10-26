@@ -1,4 +1,4 @@
-package com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.database.model;
+package com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.database.model;
 
 import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.data.database.model.RegistrationUserDatabaseModel;
 

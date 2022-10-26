@@ -23,6 +23,7 @@
     <module>core-feature-customers-registration</module>
     <module>app</module>
       <module>base-core-user-login</module>
+      <module>core-feature-customers-login</module>
   </modules>
 
   <dependencies>

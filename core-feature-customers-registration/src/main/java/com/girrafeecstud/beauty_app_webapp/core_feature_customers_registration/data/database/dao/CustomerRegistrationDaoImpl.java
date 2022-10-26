@@ -1,9 +1,9 @@
-package com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.database.dao;
+package com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.database.dao;
 
 import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.data.database.dao.UserRegistrationDao;
 import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.data.database.model.RegistrationUserDatabaseModel;
 import com.girrafeecstud.beauty_app_webapp.core_database.data.database.config.DatabaseConnection;
-import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.database.model.CustomerDatabaseModelRegistration;
+import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.database.model.CustomerDatabaseModelRegistration;
 
 import javax.annotation.PreDestroy;
 import java.sql.Connection;
