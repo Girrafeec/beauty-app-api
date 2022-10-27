@@ -4,7 +4,7 @@ import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.d
 import org.junit.Assert;
 import org.junit.Test;
 
-public class RegistationCustomerEntityRegistrationDaoUnitTest {
+public class CustomerRegistrationDaoUnitTest {
 
     @Test
     public void testDataBaseConnection() {

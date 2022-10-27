@@ -35,11 +35,13 @@ public class CustomerLoginDaoImpl extends DatabaseConnection implements UserLogi
         CustomerLoginDatabaseModel customerDatabaseModel = (CustomerLoginDatabaseModel) user;
 
         String loginQuery =
-                "select if(customer_password=?, true, false)" +
-                        "from customers" +
-                        "where (customer_phone_number=?) as status";
+                "select if(customer_password=?, true, false) as status" +
+                        " from customers" +
+                        " where (customer_phone_number=?);";
 
         try {
+            startConnection();
+
             statement = connection.prepareStatement(loginQuery);
 
             statement.setString(1, customerDatabaseModel.getCustomerHashedPassword());
@@ -85,11 +87,13 @@ public class CustomerLoginDaoImpl extends DatabaseConnection implements UserLogi
         CustomerLoginDatabaseModel customerDatabaseModel = new CustomerLoginDatabaseModel();
 
         String query =
-                "select customer_id" +
-                        "from customers" +
-                        "where (customer_phone_number=?) as customer_id";
+                "select customer_id as customer_id" +
+                        " from customers" +
+                        " where (customer_phone_number=?);";
 
         try {
+            startConnection();
+
             statement = connection.prepareStatement(query);
 
             statement.setString(

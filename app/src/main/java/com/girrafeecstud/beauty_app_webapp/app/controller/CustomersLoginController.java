@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/user/customer")
-public class CustomerLoginController {
+public class CustomersLoginController {
 
     @Autowired
     private CustomerLoginUseCase customerLoginUseCase;

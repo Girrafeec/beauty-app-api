@@ -10,7 +10,7 @@ public class CustomerLoginDatabaseMapper implements EntityMapper<CustomerLoginEn
     public CustomerLoginDatabaseModel mapFromEntity(CustomerLoginEntity type) {
         return new CustomerLoginDatabaseModel(
                 type.getCustomerPhoneNumber(),
-                type.getCustomerHashedPassword()
+                type.getCustomerPassword()
         );
     }
 
