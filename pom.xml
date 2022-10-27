@@ -24,6 +24,8 @@
     <module>app</module>
     <module>base-core-user-login</module>
     <module>core-feature-customers-login</module>
+    <module>core-feature-masters-registration</module>
+    <module>core-feature-masters-login</module>
   </modules>
 
   <dependencies>

@@ -1,19 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
     <parent>
         <artifactId>beauty-app-webapp</artifactId>
         <groupId>com.girrafeecstud.beauty_app_webapp</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <version>1.0-SNAPSHOT</version>
 
-    <groupId>com.girrafeecstud.beauty_app_webapp.app</groupId>
-    <artifactId>app</artifactId>
+    <groupId>com.girrafeecstud.beauty_app_webapp.core-feature-masters-login</groupId>
+    <artifactId>core-feature-masters-login</artifactId>
     <packaging>war</packaging>
 
-    <name>app Maven Webapp</name>
+    <name>core-feature-masters-login Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -23,6 +21,7 @@
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -52,13 +51,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.13.4</version>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.json/json -->
         <dependency>
             <groupId>org.json</groupId>
@@ -67,32 +59,55 @@
         </dependency>
 
         <dependency>
-            <groupId>com.girrafeecstud.beauty_app_webapp.core-feature-customers-registration</groupId>
-            <artifactId>core-feature-customers-registration</artifactId>
+            <groupId>com.girrafeecstud.beauty_app_webapp.core-database</groupId>
+            <artifactId>core-database</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
-            <groupId>com.girrafeecstud.beauty_app_webapp.core-feature-customers-login</groupId>
-            <artifactId>core-feature-customers-login</artifactId>
+            <groupId>com.girrafeecstud.beauty_app_webapp.base-core-user-login</groupId>
+            <artifactId>base-core-user-login</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
-            <groupId>com.girrafeecstud.beauty_app_webapp.core-feature-masters-registration</groupId>
-            <artifactId>core-feature-masters-registration</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
         <dependency>
-            <groupId>com.girrafeecstud.beauty_app_webapp.core-feature-masters-login</groupId>
-            <artifactId>core-feature-masters-login</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.9</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.9.9</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.9.9</version>
         </dependency>
 
     </dependencies>
 
     <build>
-        <finalName>app</finalName>
+        <finalName>core-feature-masters-login</finalName>
     </build>
 </project>

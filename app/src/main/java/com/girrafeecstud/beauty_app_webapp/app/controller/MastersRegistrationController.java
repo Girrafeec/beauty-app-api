@@ -1,33 +1,33 @@
 package com.girrafeecstud.beauty_app_webapp.app.controller;
 
 import com.girrafeecstud.beauty_app_webapp.base_core.domain.base.BusinessResult;
-import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.controller.mapper.CustomerRegistrationJsonEntityMapper;
+import com.girrafeecstud.beauty_app_webapp.core_feature_masters_registration.controller.mapper.MasterRegistrationJsonEntityMapper;
+import com.girrafeecstud.beauty_app_webapp.core_feature_masters_registration.domain.usecase.MasterRegistrationUseCase;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
-import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.domain.usecase.CustomerRegistrationUseCase;
-
-@Controller
-@RequestMapping("/user/customer")
-public class CustomersRegistrationController {
+@Controller("/user/master")
+public class MastersRegistrationController {
 
     @Autowired
-    private CustomerRegistrationUseCase customerRegistrationUseCase;
+    private MasterRegistrationUseCase masterRegistrationUseCase;
 
     @GetMapping("/registration")
-    public String customersRegistrationPage() {
-        return  "customer_registration_page";
+    public String mastersRegistrationPage() {
+        return  "master_registration_page";
     }
 
     @PostMapping(value = "/registration")
     public ResponseEntity receiveRegistrationData(@RequestBody String body) {
         // Import mapper via DI
-        CustomerRegistrationJsonEntityMapper mapper = new CustomerRegistrationJsonEntityMapper();
-        BusinessResult result = customerRegistrationUseCase.registration(
+        MasterRegistrationJsonEntityMapper mapper = new MasterRegistrationJsonEntityMapper();
+        BusinessResult result = masterRegistrationUseCase.registration(
                 mapper.mapToEntity(new JSONObject(body))
         );
 
