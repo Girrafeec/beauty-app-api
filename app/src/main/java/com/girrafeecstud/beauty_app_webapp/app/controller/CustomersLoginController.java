@@ -36,8 +36,6 @@ public class CustomersLoginController {
                 mapper.mapToEntity(new JSONObject(body))
         );
 
-        System.out.println(result.getBusinessResultStatus());
-
         switch (result.getBusinessResultStatus()){
             case SUCCESS:
                 return new ResponseEntity(
