@@ -33,9 +33,12 @@ public class CustomerRegistrationRepositoryImpl implements UserRegistrationRepos
             );
         }
         else {
-            RegistationCustomerEntity customer = (RegistationCustomerEntity) registrationUserEntity;
-            customer.setCustomerPassword(sha256Hash.getSHA256Hash(customer.getCustomerPassword()));
-            dataSource.registration(customer);
+            ((RegistationCustomerEntity) registrationUserEntity).setCustomerPassword(
+                    sha256Hash.getSHA256Hash(
+                            ((RegistationCustomerEntity) registrationUserEntity).getCustomerPassword()
+                    )
+            );
+            dataSource.registration(registrationUserEntity);
             return new BusinessResult(
                     null,
                     null,

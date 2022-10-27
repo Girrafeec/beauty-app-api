@@ -4,7 +4,9 @@ import com.girrafeecstud.beauty_app_webapp.base_core_user_login.data.database.mo
 
 public interface UserLoginDao {
     //TODO переписать под получение результата от БД
-    void login(LoginUserDatabaseModel user);
+    boolean passwordMatches(LoginUserDatabaseModel user);
+
+    LoginUserDatabaseModel getUserId(LoginUserDatabaseModel user);
 
     boolean userExists(LoginUserDatabaseModel user);
 

@@ -1,7 +1,7 @@
 package com.girrafeecstud.beauty_app_webapp.app.controller;
 
 import com.girrafeecstud.beauty_app_webapp.base_core.domain.base.BusinessResult;
-import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.controller.mapper.CustomerJsonEntityMapper;
+import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.controller.mapper.CustomerRegistrationJsonEntityMapper;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,7 +26,7 @@ public class CustomersRegistrationController {
     @PostMapping(value = "/registration")
     public ResponseEntity receiveRegistrationData(@RequestBody String body) {
         // Import mapper via DI
-        CustomerJsonEntityMapper mapper = new CustomerJsonEntityMapper();
+        CustomerRegistrationJsonEntityMapper mapper = new CustomerRegistrationJsonEntityMapper();
         BusinessResult result = customerRegistrationUseCase.registration(
                 mapper.mapToEntity(new JSONObject(body))
         );

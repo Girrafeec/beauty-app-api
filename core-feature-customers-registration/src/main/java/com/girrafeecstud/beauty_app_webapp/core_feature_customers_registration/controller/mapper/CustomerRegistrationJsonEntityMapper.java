@@ -4,7 +4,7 @@ import com.girrafeecstud.beauty_app_webapp.base_core.data.base.mapper.EntityMapp
 import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.domain.entity.RegistationCustomerEntity;
 import org.json.JSONObject;
 
-public class CustomerJsonEntityMapper implements EntityMapper<RegistationCustomerEntity, JSONObject> {
+public class CustomerRegistrationJsonEntityMapper implements EntityMapper<RegistationCustomerEntity, JSONObject> {
 
     @Override
     public JSONObject mapFromEntity(RegistationCustomerEntity type) {

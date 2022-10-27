@@ -2,7 +2,7 @@ package com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.
 
 import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.data.database.dao.UserRegistrationDao;
 import data.datasource.UserRegistrationDataSource;
-import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.database.mapper.CustomerDatabaseMapper;
+import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.database.mapper.CustomerRegistrationDatabaseMapper;
 import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.datasource.CustomerRegistrationDataSourceImpl;
 import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.di.annotation.CustomerRegistrationDao;
 import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.di.annotation.CustomerRegistrationDataSource;
@@ -18,7 +18,7 @@ public class DataSourceConfiguration {
     @Scope("singleton")
     public UserRegistrationDataSource getCustomerRegistrationDataSoruceImpl(
             @CustomerRegistrationDao UserRegistrationDao dao,
-            CustomerDatabaseMapper mapper
+            CustomerRegistrationDatabaseMapper mapper
             ) {
         return new CustomerRegistrationDataSourceImpl(
                 dao,
