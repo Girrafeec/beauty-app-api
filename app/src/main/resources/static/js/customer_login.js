@@ -26,8 +26,8 @@ xhr.onreadystatechange = function () {
     console.log(xhr.status);
     if (xhr.readyState === 4 && xhr.status === 200) {
         var json = JSON.parse(xhr.responseText);
-        loginPageUrl.replace("id", json.customerId);
-        window.location.replace(loginPageUrl);
+        customerPageUrl = customerPageUrl.replace("id", json.customerId);
+        window.location.replace(customerPageUrl);
     }
     if (xhr.readyState === 4 && xhr.status === 400) {
         errorField.innerText = "Invalid data";
