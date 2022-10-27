@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 @Configuration
-public class DataLayerExtraConfiguration {
+public class CustomersRegistrationDataLayerExtraConfiguration {
 
     @Bean
     @Scope("singleton")

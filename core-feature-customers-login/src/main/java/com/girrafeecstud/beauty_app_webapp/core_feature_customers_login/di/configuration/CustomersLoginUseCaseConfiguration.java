@@ -8,10 +8,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 @Configuration
-public class UseCaseConfiguration {
+public class CustomersLoginUseCaseConfiguration {
     @Bean
     @Scope("singleton")
-    public CustomerLoginUseCase getCustomerRegistrationUseCase(
+    public CustomerLoginUseCase getCustomerLoginUseCase(
             @CustomerLoginRepository UserLoginRepository repository
     ) {
         return new CustomerLoginUseCase(repository);

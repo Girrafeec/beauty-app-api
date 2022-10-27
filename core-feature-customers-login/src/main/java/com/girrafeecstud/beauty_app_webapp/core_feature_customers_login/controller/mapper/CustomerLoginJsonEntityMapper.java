@@ -8,7 +8,9 @@ public class CustomerLoginJsonEntityMapper implements EntityMapper<CustomerLogin
 
     @Override
     public JSONObject mapFromEntity(CustomerLoginEntity type) {
-        return null;
+        return new JSONObject(
+
+        ).put("customerId", type.getCustomerId());
     }
 
     @Override

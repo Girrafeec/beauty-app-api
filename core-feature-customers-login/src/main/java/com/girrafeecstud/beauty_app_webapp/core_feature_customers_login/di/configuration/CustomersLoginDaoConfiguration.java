@@ -8,12 +8,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 @Configuration
-public class DaoConfiguration {
+public class CustomersLoginDaoConfiguration {
 
     @Bean
     @CustomerLoginDao
     @Scope("singleton")
-    public UserLoginDao getCustomerRegistrationDaoImpl() {
+    public UserLoginDao getCustomerLoginDaoImpl() {
         return new CustomerLoginDaoImpl();
     }
 

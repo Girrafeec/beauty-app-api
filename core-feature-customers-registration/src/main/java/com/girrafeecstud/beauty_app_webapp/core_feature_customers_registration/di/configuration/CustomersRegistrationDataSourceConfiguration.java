@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 @Configuration
-public class DataSourceConfiguration {
+public class CustomersRegistrationDataSourceConfiguration {
 
     @Bean
     @CustomerRegistrationDataSource

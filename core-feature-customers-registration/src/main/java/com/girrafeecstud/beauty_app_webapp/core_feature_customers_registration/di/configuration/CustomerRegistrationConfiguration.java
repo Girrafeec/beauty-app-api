@@ -6,11 +6,11 @@ import org.springframework.context.annotation.Import;
 @Configuration
 @Import(
         {
-                UseCaseConfiguration.class,
-                RepositoryConfiguration.class,
-                DataSourceConfiguration.class,
-                DaoConfiguration.class,
-                DataLayerExtraConfiguration.class
+                CustomersRegistrationUseCaseConfiguration.class,
+                CustomersRegistrationRepositoryConfiguration.class,
+                CustomersRegistrationDataSourceConfiguration.class,
+                CustomersRegistrationDaoConfiguration.class,
+                CustomersRegistrationDataLayerExtraConfiguration.class
         }
 )
 public class CustomerRegistrationConfiguration {

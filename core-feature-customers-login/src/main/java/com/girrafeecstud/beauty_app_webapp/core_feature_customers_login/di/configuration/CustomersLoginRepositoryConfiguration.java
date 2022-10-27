@@ -11,12 +11,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 @Configuration
-public class RepositoryConfiguration {
+public class CustomersLoginRepositoryConfiguration {
 
     @Bean
     @CustomerLoginRepository
     @Scope("singleton")
-    public UserLoginRepository getCustomerRegistrationRepositoryImpl(
+    public UserLoginRepository getCustomerLoginRepositoryImpl(
             @CustomerLoginDataSource UserLoginDataSource dataSource,
             SHA256Hash sha256Hash
             ) {

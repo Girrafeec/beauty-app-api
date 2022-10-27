@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 @Configuration
-public class UseCaseConfiguration {
+public class CustomersRegistrationUseCaseConfiguration {
     @Bean
     @Scope("singleton")
     public CustomerRegistrationUseCase getCustomerRegistrationUseCase(

@@ -6,11 +6,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 @Configuration
-public class DataLayerExtraConfiguration {
+public class CustomersLoginDataLayerExtraConfiguration {
 
     @Bean
     @Scope("singleton")
-    public CustomerLoginDatabaseMapper getCustomerDatabaseMapper() {
+    public CustomerLoginDatabaseMapper getLoginCustomerDatabaseMapper() {
         return new CustomerLoginDatabaseMapper();
     }
 

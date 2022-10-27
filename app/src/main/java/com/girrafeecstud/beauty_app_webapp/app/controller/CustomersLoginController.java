@@ -1,7 +1,9 @@
 package com.girrafeecstud.beauty_app_webapp.app.controller;
 
 import com.girrafeecstud.beauty_app_webapp.base_core.domain.base.BusinessResult;
+import com.girrafeecstud.beauty_app_webapp.core_feature_customers_login.controller.mapper.CustomerLoginDtoMapper;
 import com.girrafeecstud.beauty_app_webapp.core_feature_customers_login.controller.mapper.CustomerLoginJsonEntityMapper;
+import com.girrafeecstud.beauty_app_webapp.core_feature_customers_login.domain.entity.CustomerLoginEntity;
 import com.girrafeecstud.beauty_app_webapp.core_feature_customers_login.domain.usecase.CustomerLoginUseCase;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,13 +31,19 @@ public class CustomersLoginController {
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody String body) {
         CustomerLoginJsonEntityMapper mapper = new CustomerLoginJsonEntityMapper();
+        CustomerLoginDtoMapper dtoMapper = new CustomerLoginDtoMapper();
         BusinessResult result = customerLoginUseCase.login(
                 mapper.mapToEntity(new JSONObject(body))
         );
 
+        System.out.println(result.getBusinessResultStatus());
+
         switch (result.getBusinessResultStatus()){
             case SUCCESS:
                 return new ResponseEntity(
+                        dtoMapper.mapFromEntity(
+                                (CustomerLoginEntity) result.getData()
+                        ),
                         HttpStatus.OK
                 );
             case ERROR:

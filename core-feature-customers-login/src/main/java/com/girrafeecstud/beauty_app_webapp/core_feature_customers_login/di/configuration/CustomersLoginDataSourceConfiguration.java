@@ -11,12 +11,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 @Configuration
-public class DataSourceConfiguration {
+public class CustomersLoginDataSourceConfiguration {
 
     @Bean
     @CustomerLoginDataSource
     @Scope("singleton")
-    public UserLoginDataSource getCustomerRegistrationDataSoruceImpl(
+    public UserLoginDataSource getCustomerLoginDataSoruceImpl(
             @CustomerLoginDao UserLoginDao dao,
             CustomerLoginDatabaseMapper mapper
             ) {
