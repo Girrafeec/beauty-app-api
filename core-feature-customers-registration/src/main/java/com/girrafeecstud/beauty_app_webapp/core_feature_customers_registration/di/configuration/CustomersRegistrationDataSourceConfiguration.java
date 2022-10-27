@@ -1,7 +1,7 @@
 package com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.di.configuration;
 
 import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.data.database.dao.UserRegistrationDao;
-import data.datasource.UserRegistrationDataSource;
+import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.data.datasource.UserRegistrationDataSource;
 import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.database.mapper.CustomerRegistrationDatabaseMapper;
 import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.data.datasource.CustomerRegistrationDataSourceImpl;
 import com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.di.annotation.CustomerRegistrationDao;

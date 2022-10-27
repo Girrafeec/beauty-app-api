@@ -3,7 +3,7 @@ package com.girrafeecstud.beauty_app_webapp.core_feature_customers_registration.
 import com.girrafeecstud.beauty_app_webapp.base_core.data.base.cryptography.SHA256Hash;
 import com.girrafeecstud.beauty_app_webapp.base_core.domain.base.BusinessResult;
 import com.girrafeecstud.beauty_app_webapp.base_core.domain.base.BusinessResultStatus;
-import data.datasource.UserRegistrationDataSource;
+import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.data.datasource.UserRegistrationDataSource;
 import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.domain.entity.RegistrationUserEntity;
 import com.girrafeecstud.beauty_app_webapp.base_core.domain.base.error.DomainErrors;
 import com.girrafeecstud.beauty_app_webapp.base_core_user_registration.domain.repository.UserRegistrationRepository;

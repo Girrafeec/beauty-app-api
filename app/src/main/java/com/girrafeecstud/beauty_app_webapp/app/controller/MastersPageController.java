@@ -3,8 +3,10 @@ package com.girrafeecstud.beauty_app_webapp.app.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller("/user/master")
+@Controller
+@RequestMapping("/user/master")
 public class MastersPageController {
 
     @GetMapping("/{id}")
