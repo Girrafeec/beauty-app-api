@@ -7,6 +7,7 @@ import com.girrafeecstud.beauty_app_api.feature_masters.data.database.dao.Master
 import com.girrafeecstud.beauty_app_api.feature_masters.domain.entity.MasterEntity;
 
 import java.sql.SQLException;
+import java.util.stream.Collectors;
 
 public class MastersDataSourceImpl implements MastersDataSource {
 
@@ -25,7 +26,7 @@ public class MastersDataSourceImpl implements MastersDataSource {
             return new BusinessResult(
                     dao.getMastersList().stream().map( masterDatabaseModel ->
                             mapper.mapToEntity(masterDatabaseModel)
-                    ),
+                    ).collect(Collectors.toList()),
                     null,
                     BusinessResultStatus.SUCCESS
             );

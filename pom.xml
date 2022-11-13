@@ -34,7 +34,9 @@
     <module>feature-customers-login</module>
     <module>feature-masters-registration</module>
     <module>feature-masters-login</module>
-      <module>feature-masters</module>
+    <module>feature-masters</module>
+    <module>feature-services</module>
+    <module>feature-service-registrations</module>
   </modules>
 
   <dependencies>
