@@ -9,7 +9,7 @@
   </parent>
 
   <groupId>com.girrafeecstud</groupId>
-  <artifactId>beauty-app-webapp</artifactId>
+  <artifactId>beauty-app-api</artifactId>
   <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>beauty-app-webapp Maven Webapp</name>
@@ -34,6 +34,7 @@
     <module>feature-customers-login</module>
     <module>feature-masters-registration</module>
     <module>feature-masters-login</module>
+      <module>feature-masters</module>
   </modules>
 
   <dependencies>
