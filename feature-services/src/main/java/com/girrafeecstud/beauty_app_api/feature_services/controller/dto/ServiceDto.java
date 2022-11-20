@@ -1,43 +1,51 @@
 package com.girrafeecstud.beauty_app_api.feature_services.controller.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.UUID;
 
 public class ServiceDto {
 
-    private UUID serviceID;
+    @JsonProperty("serviceId")
+    private UUID serviceId;
 
-    private UUID masterID;
+    @JsonProperty("masterId")
+    private UUID masterId;
 
+    @JsonProperty("serviceName")
     private String serviceName;
 
+    @JsonProperty("serviceDescription")
     private String serviceDescription;
 
+    @JsonProperty("servicePrice")
     private double servicePrice;
 
+    @JsonProperty("serviceExecutionTime")
     private int serviceExecutionTime;
 
     public ServiceDto(
-            UUID serviceID,
-            UUID masterID,
+            UUID serviceId,
+            UUID masterId,
             String serviceName,
             String serviceDescription,
             double servicePrice,
             int serviceExecutionTime
     ) {
-        this.serviceID = serviceID;
-        this.masterID = masterID;
+        this.serviceId = serviceId;
+        this.masterId = masterId;
         this.serviceName = serviceName;
         this.serviceDescription = serviceDescription;
         this.servicePrice = servicePrice;
         this.serviceExecutionTime = serviceExecutionTime;
     }
 
-    public UUID getServiceID() {
-        return serviceID;
+    public UUID getServiceId() {
+        return serviceId;
     }
 
-    public UUID getMasterID() {
-        return masterID;
+    public UUID getMasterId() {
+        return masterId;
     }
 
     public String getServiceName() {

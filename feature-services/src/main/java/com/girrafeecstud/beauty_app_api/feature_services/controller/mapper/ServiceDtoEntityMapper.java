@@ -10,8 +10,8 @@ public class ServiceDtoEntityMapper
     @Override
     public ServiceDto mapFromEntity(ServiceEntity type) {
         return new ServiceDto(
-                type.getServiceID(),
-                type.getMasterID(),
+                type.getServiceId(),
+                type.getMasterId(),
                 type.getServiceName(),
                 type.getServiceDescription(),
                 type.getServicePrice(),

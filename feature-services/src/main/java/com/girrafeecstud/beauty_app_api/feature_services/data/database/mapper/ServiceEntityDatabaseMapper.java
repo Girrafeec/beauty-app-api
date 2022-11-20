@@ -10,7 +10,7 @@ public class ServiceEntityDatabaseMapper
     @Override
     public ServiceDatabaseModel mapFromEntity(ServiceEntity type) {
         return new ServiceDatabaseModel(
-                type.getMasterID(),
+                type.getMasterId(),
                 type.getServiceName(),
                 type.getServiceDescription(),
                 type.getServicePrice(),
@@ -21,8 +21,8 @@ public class ServiceEntityDatabaseMapper
     @Override
     public ServiceEntity mapToEntity(ServiceDatabaseModel type) {
         return new ServiceEntity(
-                type.getServiceID(),
-                type.getMasterID(),
+                type.getServiceId(),
+                type.getMasterId(),
                 type.getServiceName(),
                 type.getServiceDescription(),
                 type.getServicePrice(),

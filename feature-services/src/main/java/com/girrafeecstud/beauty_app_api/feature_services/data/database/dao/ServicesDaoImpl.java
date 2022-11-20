@@ -166,7 +166,7 @@ public class ServicesDaoImpl extends DatabaseConnection implements ServicesDao {
         try {
             statement = connection.prepareStatement(insertServiceQuery);
 
-            statement.setString(1, service.getMasterID().toString());
+            statement.setString(1, service.getMasterId().toString());
             statement.setString(2, service.getServiceName());
             statement.setString(3, service.getServiceDescription());
             statement.setDouble(4, service.getServicePrice());
@@ -217,7 +217,7 @@ public class ServicesDaoImpl extends DatabaseConnection implements ServicesDao {
 
         PreparedStatement statement = null;
 
-        String deleteServiceQuery = "delete * from services where service_id=?;";
+        String deleteServiceQuery = "delete from services where service_id=?;";
 
         try {
             statement = connection.prepareStatement(deleteServiceQuery);

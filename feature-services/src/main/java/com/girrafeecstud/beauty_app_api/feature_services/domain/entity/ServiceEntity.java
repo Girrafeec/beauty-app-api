@@ -4,9 +4,9 @@ import java.util.UUID;
 
 public class ServiceEntity {
 
-    private UUID serviceID;
+    private UUID serviceId;
 
-    private UUID masterID;
+    private UUID masterId;
 
     private String serviceName;
 
@@ -17,15 +17,15 @@ public class ServiceEntity {
     private int serviceExecutionTime;
 
     public ServiceEntity(
-            UUID serviceID,
-            UUID masterID,
+            UUID serviceId,
+            UUID masterId,
             String serviceName,
             String serviceDescription,
             double servicePrice,
             int serviceExecutionTime
     ) {
-        this.serviceID = serviceID;
-        this.masterID = masterID;
+        this.serviceId = serviceId;
+        this.masterId = masterId;
         this.serviceName = serviceName;
         this.serviceDescription = serviceDescription;
         this.servicePrice = servicePrice;
@@ -33,13 +33,13 @@ public class ServiceEntity {
     }
 
     public ServiceEntity(
-            UUID masterID,
+            UUID masterId,
             String serviceName,
             String serviceDescription,
             double servicePrice,
             int serviceExecutionTime
     ) {
-        this.masterID = masterID;
+        this.masterId = masterId;
         this.serviceName = serviceName;
         this.serviceDescription = serviceDescription;
         this.servicePrice = servicePrice;
@@ -58,12 +58,12 @@ public class ServiceEntity {
         this.serviceExecutionTime = serviceExecutionTime;
     }
 
-    public UUID getServiceID() {
-        return serviceID;
+    public UUID getServiceId() {
+        return serviceId;
     }
 
-    public UUID getMasterID() {
-        return masterID;
+    public UUID getMasterId() {
+        return masterId;
     }
 
     public String getServiceName() {

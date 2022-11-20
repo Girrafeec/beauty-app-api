@@ -1,17 +1,24 @@
 package com.girrafeecstud.beauty_app_api.feature_services.controller.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.UUID;
 
 public class AddNewServiceRequestDto {
 
+    @JsonProperty("masterId")
     private UUID masterId;
 
+    @JsonProperty("serviceName")
     private String serviceName;
 
+    @JsonProperty("serviceDescription")
     private String serviceDescription;
 
+    @JsonProperty("servicePrice")
     private double servicePrice;
 
+    @JsonProperty("serviceExecutionTime")
     private int serviceExecutionTime;
 
     public AddNewServiceRequestDto(
