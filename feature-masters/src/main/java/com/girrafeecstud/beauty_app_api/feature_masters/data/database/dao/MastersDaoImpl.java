@@ -1,6 +1,6 @@
 package com.girrafeecstud.beauty_app_api.feature_masters.data.database.dao;
 
-import com.girrafeecstud.beauty_app_webapp.core_database.data.database.config.DatabaseConnection;
+import com.girrafeecstud.beauty_app_api.core_database.data.database.config.DatabaseConnection;
 import com.girrafeecstud.beauty_app_api.feature_masters.data.database.model.MasterDatabaseModel;
 
 import java.sql.Connection;

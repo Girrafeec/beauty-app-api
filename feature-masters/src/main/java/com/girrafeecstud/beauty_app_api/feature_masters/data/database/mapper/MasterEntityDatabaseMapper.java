@@ -1,6 +1,6 @@
 package com.girrafeecstud.beauty_app_api.feature_masters.data.database.mapper;
 
-import com.girrafeecstud.beauty_app_webapp.core_base.data.base.mapper.EntityMapper;
+import com.girrafeecstud.beauty_app_api.core_base.data.base.mapper.EntityMapper;
 import com.girrafeecstud.beauty_app_api.feature_masters.data.database.model.MasterDatabaseModel;
 import com.girrafeecstud.beauty_app_api.feature_masters.domain.entity.MasterEntity;
 

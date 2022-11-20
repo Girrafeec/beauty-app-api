@@ -2,12 +2,13 @@ package com.girrafeecstud.beauty_app_api.feature_masters.controller;
 
 import com.girrafeecstud.beauty_app_api.feature_masters.domain.entity.MasterEntity;
 import com.girrafeecstud.beauty_app_api.feature_masters.domain.usecase.GetMastersListUseCase;
-import com.girrafeecstud.beauty_app_webapp.core_base.domain.base.BusinessResult;
+import com.girrafeecstud.beauty_app_api.core_base.domain.base.BusinessResult;
 import com.girrafeecstud.beauty_app_api.feature_masters.controller.dto.UpdateMasterDataRequestDto;
 import com.girrafeecstud.beauty_app_api.feature_masters.controller.mapper.MasterEntityResponseDtoMapper;
 import com.girrafeecstud.beauty_app_api.feature_masters.controller.mapper.UpdateMasterRequestDtoEntityMapper;
 import com.girrafeecstud.beauty_app_api.feature_masters.domain.usecase.GetMasterDataUseCase;
 import com.girrafeecstud.beauty_app_api.feature_masters.domain.usecase.UpdateMasterDataUseCase;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -45,11 +46,15 @@ public class MastersController {
 
         switch (result.getBusinessResultStatus()) {
             case SUCCESS:
+                HttpHeaders httpHeaders = new HttpHeaders();
+                httpHeaders.add("Access-Control-Allow-Origin", "*");
                 return new ResponseEntity(
                         ((List<MasterEntity>) result.getData()).stream().map(master ->
                                 masterEntityResponseDtoMapper.mapFromEntity(master)
                         ),
+                        httpHeaders,
                         HttpStatus.OK
+
                 );
             case ERROR:
                 return new ResponseEntity(HttpStatus.BAD_REQUEST);
