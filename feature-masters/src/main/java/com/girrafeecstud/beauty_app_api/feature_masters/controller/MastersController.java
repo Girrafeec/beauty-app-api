@@ -8,7 +8,6 @@ import com.girrafeecstud.beauty_app_api.feature_masters.controller.mapper.Master
 import com.girrafeecstud.beauty_app_api.feature_masters.controller.mapper.UpdateMasterRequestDtoEntityMapper;
 import com.girrafeecstud.beauty_app_api.feature_masters.domain.usecase.GetMasterDataUseCase;
 import com.girrafeecstud.beauty_app_api.feature_masters.domain.usecase.UpdateMasterDataUseCase;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping
 public class MastersController {
 
@@ -46,13 +46,10 @@ public class MastersController {
 
         switch (result.getBusinessResultStatus()) {
             case SUCCESS:
-                HttpHeaders httpHeaders = new HttpHeaders();
-                httpHeaders.add("Access-Control-Allow-Origin", "*");
                 return new ResponseEntity(
                         ((List<MasterEntity>) result.getData()).stream().map(master ->
                                 masterEntityResponseDtoMapper.mapFromEntity(master)
                         ),
-                        httpHeaders,
                         HttpStatus.OK
 
                 );

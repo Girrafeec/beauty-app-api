@@ -8,7 +8,6 @@ import com.girrafeecstud.beauty_app_api.feature_services.controller.mapper.Servi
 import com.girrafeecstud.beauty_app_api.feature_services.controller.mapper.UpdateServiceRequestDtoEntityMapper;
 import com.girrafeecstud.beauty_app_api.feature_services.domain.entity.ServiceEntity;
 import com.girrafeecstud.beauty_app_api.feature_services.domain.usecase.*;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -53,15 +52,6 @@ public class ServicesController {
         this.updateServiceRequestDtoEntityMapper = updateServiceRequestDtoEntityMapper;
     }
 
-    HttpHeaders httpHeaders = new HttpHeaders();
-
-    @PostConstruct
-    private void onControllerCreate() {
-        httpHeaders.add("Access-Control-Allow-Origin", "*");
-//        httpHeaders.add("Access-Control-Allow-Headers", "Content-Type");
-//        httpHeaders.add("Access-Control-Allow-Methods", "GET, POST, PUT");
-    }
-
     @GetMapping("/services")
     public ResponseEntity getServicesList() {
         BusinessResult result = getServicesListUseCase.getServicesList();
@@ -101,6 +91,8 @@ public class ServicesController {
 
         return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    //TODO поменять путь?
     @GetMapping("/masters/{masterId}/services")
     public ResponseEntity getMasterServices(
             @PathVariable String masterId
@@ -136,10 +128,10 @@ public class ServicesController {
                         HttpStatus.CREATED
                 );
             case ERROR:
-                return new ResponseEntity(httpHeaders, HttpStatus.BAD_REQUEST);
+                return new ResponseEntity(HttpStatus.BAD_REQUEST);
         }
 
-        return new ResponseEntity(httpHeaders, HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @PatchMapping("/services/{serviceId}")
