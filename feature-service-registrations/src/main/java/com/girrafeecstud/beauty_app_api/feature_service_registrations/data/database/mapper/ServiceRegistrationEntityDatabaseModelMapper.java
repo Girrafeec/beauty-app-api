@@ -13,8 +13,8 @@ public class ServiceRegistrationEntityDatabaseModelMapper
                 type.getServiceRegistrationId(),
                 type.getCustomerId(),
                 type.getServiceId(),
-                type.getServiceTimestamp(),
-                type.getServiceNote()
+                type.getServiceRegistrationTimestamp(),
+                type.getServiceRegistrationNote()
         );
     }
 
@@ -24,8 +24,8 @@ public class ServiceRegistrationEntityDatabaseModelMapper
                 type.getServiceRegistrationId(),
                 type.getCustomerId(),
                 type.getServiceId(),
-                type.getServiceTimestamp(),
-                type.getServiceNote()
+                type.getServiceRegistrationTimestamp(),
+                type.getServiceRegistrationNote()
         );
     }
 }

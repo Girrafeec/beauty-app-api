@@ -1,6 +1,7 @@
 package com.girrafeecstud.beauty_app_api.feature_service_registrations.controller;
 
 import com.girrafeecstud.beauty_app_api.core_base.domain.base.BusinessResult;
+import com.girrafeecstud.beauty_app_api.feature_service_registrations.controller.dto.ServiceRegistrationDto;
 import com.girrafeecstud.beauty_app_api.feature_service_registrations.controller.mapper.ServiceRegistrationDtoEntityMapper;
 import com.girrafeecstud.beauty_app_api.feature_service_registrations.domain.entity.ServiceRegistrationEntity;
 import com.girrafeecstud.beauty_app_api.feature_service_registrations.domain.usecase.AddServiceRegistrationUseCase;
@@ -39,9 +40,9 @@ public class ServiceRegistrationsController {
         this.mapper = mapper;
     }
 
-    @GetMapping
+    @RequestMapping(params = "customer-id", method = RequestMethod.GET)
     public ResponseEntity getCustomerServiceRegistrations(
-            @RequestParam(value = "customer-id", required = false) String customerId
+            @RequestParam(value = "customer-id", required = true) String customerId
     ) {
         BusinessResult result =
                 getCustomerServiceRegistrationsUseCase.getCustomerServiceRegistrations(customerId);
@@ -61,9 +62,9 @@ public class ServiceRegistrationsController {
         return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @GetMapping
+    @RequestMapping(params = "master-id", method = RequestMethod.GET)
     public ResponseEntity getMasterServiceRegistrations(
-            @RequestParam(value = "master-id", required = false) String masterId
+            @RequestParam(value = "master-id", required = true) String masterId
     ) {
         BusinessResult result =
                 getMasterServiceRegistrationsUseCase.getMasterServiceRegistrations(masterId);
@@ -83,7 +84,7 @@ public class ServiceRegistrationsController {
         return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @GetMapping("/{serviceId}")
+    @GetMapping("/{serviceRegistrationId}")
     public ResponseEntity getServiceRegistrationData(
             @PathVariable String serviceRegistrationId
     ) {
@@ -105,4 +106,22 @@ public class ServiceRegistrationsController {
         return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    @PostMapping
+    public ResponseEntity addNewServiceRegistration(
+            @RequestBody ServiceRegistrationDto body
+    ) {
+        BusinessResult result =
+                addServiceRegistrationUseCase.addServiceRegistration(
+                        mapper.mapFromEntity(body)
+                );
+
+        switch (result.getBusinessResultStatus()) {
+            case SUCCESS:
+                return new ResponseEntity(HttpStatus.CREATED);
+            case ERROR:
+                return new ResponseEntity(HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }

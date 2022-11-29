@@ -2,7 +2,6 @@ package com.girrafeecstud.beauty_app_api.feature_service_registrations.controlle
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class ServiceRegistrationDto {
@@ -16,36 +15,38 @@ public class ServiceRegistrationDto {
     @JsonProperty("serviceId")
     private UUID serviceId;
 
-    @JsonProperty("serviceTimestamp")
-    private String serviceTimestamp;
+    @JsonProperty("serviceRegistrationTimestamp")
+    private String serviceRegistrationTimestamp;
 
-    @JsonProperty("serviceNote")
-    private String serviceNote;
+    @JsonProperty("serviceRegistrationNote")
+    private String serviceRegistrationNote;
+
+    public ServiceRegistrationDto() {}
 
     public ServiceRegistrationDto(
             UUID customerId,
             UUID serviceId,
-            String serviceTimestamp,
-            String serviceNote
+            String serviceRegistrationTimestamp,
+            String serviceRegistrationNote
     ) {
         this.customerId = customerId;
         this.serviceId = serviceId;
-        this.serviceTimestamp = serviceTimestamp;
-        this.serviceNote = serviceNote;
+        this.serviceRegistrationTimestamp = serviceRegistrationTimestamp;
+        this.serviceRegistrationNote = serviceRegistrationNote;
     }
 
     public ServiceRegistrationDto(
             UUID serviceRegistrationId,
             UUID customerId,
             UUID serviceId,
-            String serviceTimestamp,
-            String serviceNote
+            String serviceRegistrationTimestamp,
+            String serviceRegistrationNote
     ) {
         this.serviceRegistrationId = serviceRegistrationId;
         this.customerId = customerId;
         this.serviceId = serviceId;
-        this.serviceTimestamp = serviceTimestamp;
-        this.serviceNote = serviceNote;
+        this.serviceRegistrationTimestamp = serviceRegistrationTimestamp;
+        this.serviceRegistrationNote = serviceRegistrationNote;
     }
 
     public UUID getServiceRegistrationId() {
@@ -60,12 +61,12 @@ public class ServiceRegistrationDto {
         return serviceId;
     }
 
-    public String getServiceTimestamp() {
-        return serviceTimestamp;
+    public String getServiceRegistrationTimestamp() {
+        return serviceRegistrationTimestamp;
     }
 
-    public String getServiceNote() {
-        return serviceNote;
+    public String getServiceRegistrationNote() {
+        return serviceRegistrationNote;
     }
 
 }

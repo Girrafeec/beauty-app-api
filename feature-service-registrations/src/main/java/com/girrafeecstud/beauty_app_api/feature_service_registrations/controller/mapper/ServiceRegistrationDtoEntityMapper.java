@@ -14,8 +14,8 @@ public class ServiceRegistrationDtoEntityMapper
         return new ServiceRegistrationEntity(
                 type.getCustomerId(),
                 type.getServiceId(),
-                LocalDateTime.parse(type.getServiceTimestamp()),
-                type.getServiceNote()
+                LocalDateTime.parse(type.getServiceRegistrationTimestamp()),
+                type.getServiceRegistrationNote()
         );
     }
 
@@ -25,8 +25,8 @@ public class ServiceRegistrationDtoEntityMapper
                 type.getServiceRegistrationId(),
                 type.getCustomerId(),
                 type.getServiceId(),
-                type.getServiceTimestamp().toString(),
-                type.getServiceNote()
+                type.getServiceRegistrationTimestamp().toString(),
+                type.getServiceRegistrationNote()
         );
     }
 }

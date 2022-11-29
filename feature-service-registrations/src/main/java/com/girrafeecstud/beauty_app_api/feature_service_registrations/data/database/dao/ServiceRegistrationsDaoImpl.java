@@ -4,7 +4,6 @@ import com.girrafeecstud.beauty_app_api.core_database.data.database.config.Datab
 import com.girrafeecstud.beauty_app_api.feature_service_registrations.data.database.model.ServiceRegistrationDatabaseModel;
 
 import java.sql.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -52,8 +51,8 @@ public class ServiceRegistrationsDaoImpl extends DatabaseConnection implements S
 
             statement.setString(1, serviceRegistration.getCustomerId().toString());
             statement.setString(2, serviceRegistration.getServiceId().toString());
-            statement.setTimestamp(3, Timestamp.valueOf(serviceRegistration.getServiceTimestamp()));
-            statement.setString(3, serviceRegistration.getServiceNote());
+            statement.setTimestamp(3, Timestamp.valueOf(serviceRegistration.getServiceRegistrationTimestamp()));
+            statement.setString(4, serviceRegistration.getServiceRegistrationNote());
 
             statement.executeUpdate();
 
@@ -86,7 +85,7 @@ public class ServiceRegistrationsDaoImpl extends DatabaseConnection implements S
                 serviceRegistrations.add(
                         new ServiceRegistrationDatabaseModel(
                                 UUID.fromString(resultSet.getString("service_registration_id")),
-                                UUID.fromString(resultSet.getString("service_customer_id")),
+                                UUID.fromString(resultSet.getString("customer_id")),
                                 UUID.fromString(resultSet.getString("service_id")),
                                 resultSet.getTimestamp("service_timestamp").toLocalDateTime(),
                                 resultSet.getString("service_note")
@@ -124,7 +123,7 @@ public class ServiceRegistrationsDaoImpl extends DatabaseConnection implements S
                 serviceRegistrations.add(
                         new ServiceRegistrationDatabaseModel(
                                 UUID.fromString(resultSet.getString("service_registration_id")),
-                                UUID.fromString(resultSet.getString("service_customer_id")),
+                                UUID.fromString(resultSet.getString("customer_id")),
                                 UUID.fromString(resultSet.getString("service_id")),
                                 resultSet.getTimestamp("service_timestamp").toLocalDateTime(),
                                 resultSet.getString("service_note")
@@ -158,13 +157,15 @@ public class ServiceRegistrationsDaoImpl extends DatabaseConnection implements S
 
             ResultSet resultSet = statement.executeQuery();
 
-            serviceRegistration = new ServiceRegistrationDatabaseModel(
-                    UUID.fromString(resultSet.getString("service_registration_id")),
-                    UUID.fromString(resultSet.getString("service_customer_id")),
-                    UUID.fromString(resultSet.getString("service_id")),
-                    resultSet.getTimestamp("service_timestamp").toLocalDateTime(),
-                    resultSet.getString("service_note")
+            while (resultSet.next()) {
+                serviceRegistration = new ServiceRegistrationDatabaseModel(
+                        UUID.fromString(resultSet.getString("service_registration_id")),
+                        UUID.fromString(resultSet.getString("customer_id")),
+                        UUID.fromString(resultSet.getString("service_id")),
+                        resultSet.getTimestamp("service_timestamp").toLocalDateTime(),
+                        resultSet.getString("service_note")
                 );
+            }
 
             return serviceRegistration;
         } catch (SQLException e) {

@@ -11,34 +11,34 @@ public class ServiceRegistrationEntity {
 
     private UUID serviceId;
 
-    private LocalDateTime serviceTimestamp;
+    private LocalDateTime serviceRegistrationTimestamp;
 
-    private String serviceNote;
+    private String serviceRegistrationNote;
 
     public ServiceRegistrationEntity(
             UUID customerId,
             UUID serviceId,
-            LocalDateTime serviceTimestamp,
-            String serviceNote
+            LocalDateTime serviceRegistrationTimestamp,
+            String serviceRegistrationNote
     ) {
         this.customerId = customerId;
         this.serviceId = serviceId;
-        this.serviceTimestamp = serviceTimestamp;
-        this.serviceNote = serviceNote;
+        this.serviceRegistrationTimestamp = serviceRegistrationTimestamp;
+        this.serviceRegistrationNote = serviceRegistrationNote;
     }
 
     public ServiceRegistrationEntity(
             UUID serviceRegistrationId,
             UUID customerId,
             UUID serviceId,
-            LocalDateTime serviceTimestamp,
-            String serviceNote
+            LocalDateTime serviceRegistrationTimestamp,
+            String serviceRegistrationNote
     ) {
         this.serviceRegistrationId = serviceRegistrationId;
         this.customerId = customerId;
         this.serviceId = serviceId;
-        this.serviceTimestamp = serviceTimestamp;
-        this.serviceNote = serviceNote;
+        this.serviceRegistrationTimestamp = serviceRegistrationTimestamp;
+        this.serviceRegistrationNote = serviceRegistrationNote;
     }
 
     public UUID getServiceRegistrationId() {
@@ -53,11 +53,11 @@ public class ServiceRegistrationEntity {
         return serviceId;
     }
 
-    public LocalDateTime getServiceTimestamp() {
-        return serviceTimestamp;
+    public LocalDateTime getServiceRegistrationTimestamp() {
+        return serviceRegistrationTimestamp;
     }
 
-    public String getServiceNote() {
-        return serviceNote;
+    public String getServiceRegistrationNote() {
+        return serviceRegistrationNote;
     }
 }
