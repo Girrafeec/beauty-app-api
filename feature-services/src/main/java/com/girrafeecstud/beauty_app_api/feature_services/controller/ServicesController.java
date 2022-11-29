@@ -17,6 +17,7 @@ import javax.annotation.PostConstruct;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class ServicesController {
 
     private AddServiceUseCase addServiceUseCase;
@@ -57,6 +58,8 @@ public class ServicesController {
     @PostConstruct
     private void onControllerCreate() {
         httpHeaders.add("Access-Control-Allow-Origin", "*");
+//        httpHeaders.add("Access-Control-Allow-Headers", "Content-Type");
+//        httpHeaders.add("Access-Control-Allow-Methods", "GET, POST, PUT");
     }
 
     @GetMapping("/services")
@@ -69,7 +72,6 @@ public class ServicesController {
                         ((List<ServiceEntity>) result.getData()).stream().map(service ->
                                 serviceDtoEntityMapper.mapFromEntity(service)
                         ),
-                        httpHeaders,
                         HttpStatus.OK
                 );
             case ERROR:
@@ -91,7 +93,6 @@ public class ServicesController {
                         serviceDtoEntityMapper.mapFromEntity(
                                 (ServiceEntity) result.getData()
                         ),
-                        httpHeaders,
                         HttpStatus.OK
                 );
             case ERROR:
@@ -112,7 +113,6 @@ public class ServicesController {
                         ((List<ServiceEntity>) result.getData()).stream().map(service ->
                                 serviceDtoEntityMapper.mapFromEntity(service)
                         ),
-                        httpHeaders,
                         HttpStatus.OK
                 );
             case ERROR:
@@ -125,7 +125,7 @@ public class ServicesController {
     @PostMapping("/services")
     public ResponseEntity addService(
             @RequestBody AddNewServiceRequestDto body
-            ) {
+    ) {
         BusinessResult result = addServiceUseCase.addService(
                 addNewServiceRequestDtoEntityMapper.mapFromEntity(body)
         );
@@ -133,14 +133,13 @@ public class ServicesController {
         switch (result.getBusinessResultStatus()) {
             case SUCCESS:
                 return new ResponseEntity(
-                        httpHeaders,
                         HttpStatus.CREATED
                 );
             case ERROR:
-                return new ResponseEntity(HttpStatus.BAD_REQUEST);
+                return new ResponseEntity(httpHeaders, HttpStatus.BAD_REQUEST);
         }
 
-        return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity(httpHeaders, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @PatchMapping("/services/{serviceId}")
@@ -156,7 +155,6 @@ public class ServicesController {
         switch (result.getBusinessResultStatus()) {
             case SUCCESS:
                 return new ResponseEntity(
-                        httpHeaders,
                         HttpStatus.OK
                 );
             case ERROR:
@@ -175,7 +173,6 @@ public class ServicesController {
         switch (result.getBusinessResultStatus()) {
             case SUCCESS:
                 return new ResponseEntity(
-                        httpHeaders,
                         HttpStatus.OK
                 );
             case ERROR:
