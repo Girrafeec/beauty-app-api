@@ -5,7 +5,7 @@ public class DatabaseConfig {
     public static final String databaseDriver = "com.mysql.cj.jdbc.Driver";
 
     public static final String databaseUrl =
-            "jdbc:mysql://localhost:3306/service_registration?useSSL=false&Unicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+            "jdbc:mysql://localhost:3306/service_registration?useSSL=false&Unicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false";
 
     public static final String databaseUsername = "admin";
 

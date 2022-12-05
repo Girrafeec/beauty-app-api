@@ -158,6 +158,7 @@ public class ServiceRegistrationsDaoImpl extends DatabaseConnection implements S
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
+                System.out.println(resultSet.getTimestamp("service_timestamp"));
                 serviceRegistration = new ServiceRegistrationDatabaseModel(
                         UUID.fromString(resultSet.getString("service_registration_id")),
                         UUID.fromString(resultSet.getString("customer_id")),
@@ -167,6 +168,8 @@ public class ServiceRegistrationsDaoImpl extends DatabaseConnection implements S
                 );
             }
 
+            System.out.println(serviceRegistration.getServiceRegistrationTimestamp());
+            System.out.println(serviceRegistration.getServiceRegistrationNote());
             return serviceRegistration;
         } catch (SQLException e) {
             throw e;

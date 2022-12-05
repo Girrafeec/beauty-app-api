@@ -37,6 +37,7 @@
     <module>feature-masters</module>
     <module>feature-services</module>
     <module>feature-service-registrations</module>
+    <module>feature-customers</module>
   </modules>
 
   <dependencies>
