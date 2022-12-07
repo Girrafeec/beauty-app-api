@@ -38,6 +38,7 @@
     <module>feature-services</module>
     <module>feature-service-registrations</module>
     <module>feature-customers</module>
+      <module>feature-masters-service-registrations-statistics</module>
   </modules>
 
   <dependencies>

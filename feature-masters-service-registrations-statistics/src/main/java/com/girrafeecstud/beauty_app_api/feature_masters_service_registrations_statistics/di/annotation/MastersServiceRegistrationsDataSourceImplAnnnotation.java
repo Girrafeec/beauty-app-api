@@ -1,0 +1,4 @@
+package com.girrafeecstud.beauty_app_api.feature_masters_service_registrations_statistics.di.annotation;
+
+public @interface MastersServiceRegistrationsDataSourceImplAnnnotation {
+}
