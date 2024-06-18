@@ -3,8 +3,7 @@ on:
   pull_request: {}
   push:
     branches:
-    - main
-    - master
+    - spring-boot-version
     paths:
     - .github/workflows/semgrep.yml
   schedule:
